@@ -1,7 +1,7 @@
 <?php
 
 
-$dbname = "stetic100DB";
+$dbname = "sara_db";
 $user = "root";
 $password = "";
 $server = 'localhost';
