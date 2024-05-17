@@ -6,6 +6,7 @@ class Product implements JsonSerializable {
     private $price;
     private $creation_date;
     private $stock;
+    private $section_id;
 
     /**
      * @param $id
@@ -14,8 +15,9 @@ class Product implements JsonSerializable {
      * @param $price
      * @param $creation_date
      * @param $stock
+     * @param $section_id
      */
-    public function __construct($id, $name, $description, $price, $creation_date, $stock)
+    public function __construct($id, $name, $description, $price, $creation_date, $stock, $section_id)
     {
         $this->id = $id;
         $this->name = $name;
@@ -23,6 +25,7 @@ class Product implements JsonSerializable {
         $this->price = $price;
         $this->creation_date = $creation_date;
         $this->stock = $stock;
+        $this->section_id = $section_id;
     }
 
     /**
@@ -121,6 +124,23 @@ class Product implements JsonSerializable {
         $this->stock = $stock;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getSectionId()
+    {
+        return $this->section_id;
+    }
+
+    /**
+     * @param mixed $section_id
+     */
+    public function setSectionId($section_id)
+    {
+        $this->section_id = $section_id;
+    }
+
+
 
     public function jsonSerialize()
     {
@@ -131,6 +151,7 @@ class Product implements JsonSerializable {
             'price' => $this->price,
             'creation_date' => $this->creation_date,
             'stock' => $this->stock,
+            'section_id' => $this->section_id
         ];
     }
 }

@@ -8,7 +8,7 @@ class Section implements JsonSerializable {
     private $creation_date;
     private $avaliable;
 
-    private $section_id;
+
 
     /**
      * @param $id
