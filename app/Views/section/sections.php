@@ -1,49 +1,38 @@
-<main role="main" >
+<main role="main">
 
     <div class="container" style="margin-top: 150px">
 
         <h2 style="text-align: center;">OUR SECTIONS</h2>
         <table class="table container" style="margin-top: 50px">
-            <div class="container d-flex justify-content-center">
+            <thead>
+            <tr>
+                <th>SECTION ID</th>
+                <th>NAME</th>
+                <th>DESCRIPTION</th>
+                <th>CREATION DATE</th>
+                <th>LINK</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($resultado as $section) { ?>
                 <tr>
-                    <th>SECTION ID</th>
-                    <th>NAME</th>
-                    <th>DESCRIPTION</th>
-                    <th>CREATION DATE</th>
-                    <th>LINK</th>
-
-
-
+                    <td><?php echo $section['id']; ?></td>
+                    <td><?php echo $section['name']; ?></td>
+                    <td><?php echo $section['description']; ?></td>
+                    <td><?php echo $section['creation_date']; ?></td>
+                    <td>
+                        <?php if ($section['available'] == 1) { ?>
+                            <form method="post" action="../../app/Controllers/product_controller.php?action=list_section_products">
+                                <input type="hidden" name="section_id" value="<?php echo $section['id']; ?>">
+                                <button type="submit" class="btn btn-primary btn-sm my-2">PRODUCTS</button>
+                            </form>
+                        <?php } else { ?>
+                            NO AVAILABLE
+                        <?php } ?>
+                    </td>
                 </tr>
-                <?php
-
-                foreach ($resultado as $section) {
-                ?>
-                                <tr>
-                                    <td><?php echo $section['id']; ?></td>
-                                    <td><?php echo $section['name']; ?></td>
-                                    <td><?php echo $section['description']; ?></td>
-                                    <td><?php echo $section['creation_date']; ?></td>
-
-                                    <?php
-                                    if ($section['avaliable'] == 1) { ?>
-                                        <td>
-                                            <button type="submit" class="btn btn-primary btn-sm my-2">GO</button>
-                                        </td>
-                                    <?php } ?>
-                                    <?php
-                                    if ($section['avaliable'] == 0) { ?>
-                                        <td>
-                                            NO AVALIABLE
-                                        </td>
-                                    <?php } ?>
-                                </tr>
-                    <?php
-                }
-                ?>
-
-            </div>
-
+            <?php } ?>
+            </tbody>
         </table>
 
     </div>
@@ -53,4 +42,3 @@
     </div>
 
 </main>
-

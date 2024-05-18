@@ -13,6 +13,14 @@ if(isset($_GET['action'])) {
             show_list_shops($dbh);
             break;
 
+        case 'add_one':
+            //mostrar formulario
+            show_add_form($dbh);
+            return;
+        case 'add_shop':
+            //añadir un cliente
+            add_shop($dbh);
+            return;
 
 
     }
@@ -33,3 +41,18 @@ function show_list_shops($dbh)
     include("../../includes/footer.php");
 }
 
+function show_add_form($dbh)
+{
+    include('../../includes/header.php');
+    include('../../app/Views/shop/addshopForm.php');
+    include("../../includes/footer.php");
+}
+function add_shop($dbh)
+{
+
+    require('../../app/Models/shop_model.php');
+    add_one_shop($dbh);
+    header('Location: shop_controller.php?action=list_all');
+    exit();
+
+}

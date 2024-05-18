@@ -12,6 +12,9 @@ if(isset($_GET['action'])) {
             //listar todos los productos
             show_list_products($dbh);
             break;
+        case 'list_section_products':
+            list_section_products($dbh);
+            break;
 
 
     }
@@ -32,5 +35,20 @@ function show_list_products($dbh)
     include("../../includes/footer.php");
 }
 
+function list_section_products($dbh)
+{
+    include('../../includes/header.php');
+    require('../../app/Models/product_model.php');
 
+
+    if (isset($_POST['section_id'])) {
+        $section_id = $_POST['section_id'];
+        $products = list_productsBySection($dbh, $section_id);
+    } else {
+        $products = [];
+    }
+
+    include('../../app/Views/product/products.php');
+    include("../../includes/footer.php");
+}
 

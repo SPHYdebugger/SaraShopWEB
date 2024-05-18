@@ -6,26 +6,26 @@ class Section implements JsonSerializable {
 
     private $description;
     private $creation_date;
-    private $avaliable;
+    private $available;
 
-
+    private $shop_id;
 
     /**
      * @param $id
      * @param $name
      * @param $description
      * @param $creation_date
-     * @param $avaliable
-     * @param $section_id
+     * @param $available
+     * @param $shop_id
      */
-    public function __construct($id, $name, $description, $creation_date, $avaliable, $section_id)
+    public function __construct($id, $name, $description, $creation_date, $available, $shop_id)
     {
         $this->id = $id;
         $this->name = $name;
         $this->description = $description;
         $this->creation_date = $creation_date;
-        $this->avaliable = $avaliable;
-        $this->section_id = $section_id;
+        $this->available = $available;
+        $this->shop_id = $shop_id;
     }
 
     /**
@@ -95,34 +95,35 @@ class Section implements JsonSerializable {
     /**
      * @return mixed
      */
-    public function getAvaliable()
+    public function getAvailable()
     {
-        return $this->avaliable;
+        return $this->available;
     }
 
     /**
-     * @param mixed $avaliable
+     * @param mixed $available
      */
-    public function setAvaliable($avaliable)
+    public function setAvailable($available)
     {
-        $this->avaliable = $avaliable;
+        $this->available = $available;
     }
 
     /**
      * @return mixed
      */
-    public function getSectionId()
+    public function getShopId()
     {
-        return $this->section_id;
+        return $this->shop_id;
     }
 
     /**
-     * @param mixed $section_id
+     * @param mixed $shop_id
      */
-    public function setSectionId($section_id)
+    public function setShopId($shop_id)
     {
-        $this->section_id = $section_id;
+        $this->shop_id = $shop_id;
     }
+
 
 
     public function jsonSerialize()
@@ -132,8 +133,8 @@ class Section implements JsonSerializable {
             'name' => $this->name,
             'description' => $this->description,
             'creation_date' => $this->creation_date,
-            'avaliable' => $this->avaliable,
-            'section_id' => $this->section_id,
+            'available' => $this->available,
+            'shop_id' => $this->shop_id,
         ];
     }
 }
