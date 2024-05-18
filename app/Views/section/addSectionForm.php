@@ -29,7 +29,7 @@
                 <input type="text" class="form-control" id="PHONE" name="PHONE">
             </div>
             <div class="mb-3">
-                <label for="OPEN" class="form-label">IS OPEN</label>
+                <label for="cliente" class="form-label">IS OPEN</label>
                 <select class="form-control" id="OPEN" name="OPEN">
                     <option value="">Choose one option</option>
                     <option value="1">True</option>

@@ -1,6 +1,9 @@
 <main role="main">
 
     <div class="container" style="margin-top: 150px">
+        <div class="d-flex justify-content-center" style="margin-top: 100px">
+            <a href="../../app/Controllers/section_controller.php?action=add_one" class="btn btn-primary my-2">Insert new section</a>
+        </div>
 
         <h2 style="text-align: center;">OUR SECTIONS</h2>
         <table class="table container" style="margin-top: 50px">

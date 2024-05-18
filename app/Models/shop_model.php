@@ -81,5 +81,16 @@ function get_shop($dbh) {
 
 }
 
+function delete_shopById($dbh, $shop_id) {
+    try {
+        $stmt = $dbh->prepare('DELETE FROM shop WHERE id = :id');
+        $stmt->bindParam(':id', $shop_id, PDO::PARAM_INT);
+        if (!$stmt->execute()) {
+            throw new Exception('Failed to delete shop');
+        }
+    } catch (Exception $e) {
+        throw new Exception('Error deleting shop: ' . $e->getMessage());
+    }
+}
 
 

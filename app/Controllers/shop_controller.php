@@ -18,8 +18,11 @@ if(isset($_GET['action'])) {
             show_add_form($dbh);
             return;
         case 'add_shop':
-            //añadir un cliente
+
             add_shop($dbh);
+            return;
+        case 'delete_shop':
+            delete_shop($dbh);
             return;
 
 
@@ -55,4 +58,22 @@ function add_shop($dbh)
     header('Location: shop_controller.php?action=list_all');
     exit();
 
+}
+
+function delete_shop($dbh)
+{
+    require('../../app/Models/shop_model.php');
+
+    if (isset($_POST['shop_id'])) {
+        $shop_id = $_POST['shop_id'];
+        try {
+            delete_shopById($dbh, $shop_id);
+            header('Location: shop_controller.php?action=list_all&status=success');
+        } catch (Exception $e) {
+            header('Location: shop_controller.php?action=list_all&status=error&message=' . urlencode($e->getMessage()));
+        }
+    } else {
+        header('Location: shop_controller.php?action=list_all&status=error&message=' . urlencode('Shop ID not provided'));
+    }
+    exit();
 }
