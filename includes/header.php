@@ -11,7 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>SaraShop WEB </title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -65,7 +65,7 @@
                     </li>
                 </ul>
 
-                    <p><a class="btn btn-lg btn-primary" href="../../../Stetic100/resources/register/logout.php" role="button" style="margin-left: 10px">LogIn</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="" role="button" style="margin-left: 10px">LogIn</a></p>
 
 
             </div>

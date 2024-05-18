@@ -12,6 +12,7 @@ class Shop implements JsonSerializable
     private $open;
 
 
+
     public function __construct($id, $name, $address, $phone, $open_date, $open)
     {
         $this->id = $id;

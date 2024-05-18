@@ -1,6 +1,6 @@
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2022-2024 SPHYdebugger develop. ; <a href="http://sphydebugger.github.io">Entrar al perfil</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2022-2024 San Valero develop. ; <a href="http://sphydebugger.github.io">Entrar al perfil</a> &middot; <a href="#">Terms</a></p>
     </footer>
 
     <!-- Bootstrap core JavaScript

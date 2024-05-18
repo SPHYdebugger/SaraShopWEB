@@ -21,7 +21,7 @@ require('../resources/db/connect-db.php');
                     <img class="rounded-circle" src="../resources/images/ropa.jpg" alt="Generic placeholder image" width="140" height="140">
                     <h2>PRODUCTS</h2>
                     <p style="min-height: 90px">Discover our fantastic products</p>
-                    <p><a class="btn btn-lg btn-primary" href="../app/Controllers/section_controller.php?action=list_all" role="button">ENTER &raquo;</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="../app/Controllers/product_controller.php?action=list_all" role="button">ENTER &raquo;</a></p>
                 </div >
 
 
