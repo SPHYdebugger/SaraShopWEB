@@ -1,9 +1,18 @@
+
+
 <main role="main">
 
     <div class="d-flex justify-content-center" style="margin-top: 100px">
         <a href="../../app/Controllers/shop_controller.php?action=add_one" class="btn btn-primary my-2">Insert new shop</a>
     </div>
-
+    <?php
+    if (isset($_GET['status']) && $_GET['status'] == 'error') {
+        $message = 'you can´t delete that table because it has associated sections';
+        echo '<div class="alert alert-danger">' . htmlspecialchars($message) . '</div>';
+    } elseif (isset($_GET['status']) && $_GET['status'] == 'success') {
+        echo '<div class="alert alert-success">Shop deleted successfully</div>';
+    }
+    ?>
     <div class="container" style="margin-top: 20px">
         <h2 style="text-align: center;">OUR SHOPS</h2>
         <div class="row">
@@ -24,8 +33,8 @@
                             <strong class="card-text" style="display:block; text-align: center; background-color: red">Is close </strong>
                             <?php } ?>
                             <div style="display: ruby-text;">
-                                <form method="post" action="">
-                                    <input type="hidden" name="deleteShop" value="<?php echo $shop->getId(); ?>">
+                                <form method="post" action="../../app/Controllers/shop_controller.php?action=delete_shop">
+                                    <input type="hidden" name="shop_id" value="<?php echo $shop->getId(); ?>">
                                     <button type="submit" class="btn btn-primary btn-sm my-2" >DELETE</button>
                                 </form>
                                 <p><?php echo $shop->getId(); ?></p>
